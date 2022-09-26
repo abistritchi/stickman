@@ -37,12 +37,27 @@ function addStickman() {
         LeftFoot=[227,0],
         RightFoot=[0,0],
 
-        Head = Head2,
-        Torso = Torso7,
-        LeftArm = LeftArm10,
-        RightArm = RightArm15;
+        Head,
+        Torso,
+        LeftArm,
+        RightArm;
 
+    if (document.getElementById('SelectedHead').value === "Head1"){Head = Head1;};
+    if (document.getElementById('SelectedHead').value === "Head2"){Head = Head2;};
+    if (document.getElementById('SelectedHead').value === "Head3"){Head = Head3;};
 
+    if (document.getElementById('SelectedTorso').value === "Torso4"){Torso = Torso4;};
+    if (document.getElementById('SelectedTorso').value === "Torso5"){Torso = Torso5;};
+    if (document.getElementById('SelectedTorso').value === "Torso6"){Torso = Torso6;};
+    if (document.getElementById('SelectedTorso').value === "Torso7"){Torso = Torso7;};
+
+    if (document.getElementById('SelectedLeftArm').value === "LeftArm8"){LeftArm = LeftArm8;};
+    if (document.getElementById('SelectedLeftArm').value === "LeftArm9"){LeftArm = LeftArm9;};
+    if (document.getElementById('SelectedLeftArm').value === "LeftArm10"){LeftArm = LeftArm10;};
+
+    if (document.getElementById('SelectedRightArm').value === "RightArm13"){RightArm = RightArm13;};
+    if (document.getElementById('SelectedRightArm').value === "RightArm14"){RightArm = RightArm14;};
+    if (document.getElementById('SelectedRightArm').value === "RightArm15"){RightArm = RightArm15;};
 
 
 
