@@ -1,3 +1,10 @@
+function getNode(n, v) {
+    n = document.createElementNS("http://www.w3.org/2000/svg", n);
+    for (var p in v)
+        n.setAttributeNS(null, p.replace(/[A-Z]/g, function(m, p, o, s) { return "-" + m.toLowerCase(); }), v[p]);
+    return n
+}
+
 function addStickman() {
 
     var image = document.getElementById('myImage');
@@ -83,7 +90,7 @@ function addStickman() {
 
     var head = document.createElement("img");
     head.setAttribute('src', Head[2]);
-    head.setAttribute('class', 'overlays');
+    head.setAttribute('class', 'overlays opacity');
     head.style.left = l + Torso[0] - Head[0]  + "px";
     head.style.top = t  + Torso[1] - Head[1] + "px";
     document.body.appendChild(head);
@@ -122,10 +129,45 @@ function addStickman() {
     rightFoot.style.top = t  + Torso[9] - RightFoot[1] + "px";
     document.body.appendChild(rightFoot);
 
+    /*
     var bier = document.createElement("img");
-    bier.setAttribute('src', 'bier.png');
+    bier.setAttribute('src', 'bulb.svg');
     bier.setAttribute('class', 'overlays');
     bier.style.left = l + Torso[4] - RightArm[0] + 200 + "px";
     bier.style.top = t  + Torso[5] - RightArm[1]- 300 + "px";
     document.body.appendChild(bier);
+    */
+
+
+    /*
+    var svgElement = document.createElement("svg");
+    svgElement.setAttribute('id', 'svgElement');
+    svgElement.setAttribute('width', 100);
+    svgElement.setAttribute('high', 200);
+    svgElement.style.left = l + Torso[4] - RightArm[0] + 350+ "px";
+    svgElement.style.top = t  + Torso[5] - RightArm[1] + 0+ "px";
+    document.body.appendChild(svgElement);
+    */
+
+    /*
+    var bier = document.createElement("img");
+    bier.setAttribute('src', 'bulb.svg');
+    bier.setAttribute('class', 'overlays');
+    bier.setAttribute('width', 100);
+    bier.setAttribute('high', 200);
+    bier.appendChild( getNode('rect', { width:200, height:20, fill:'#ff0000' }) );
+    bier.style.left = l + Torso[4] - RightArm[0] + 200 + "px";
+    bier.style.top = t  + Torso[5] - RightArm[1]- 300 + "px";
+    document.body.appendChild(bier);
+    */
+
+    var svg = getNode("svg");
+    document.body.appendChild(svg);
+    svg.setAttribute('class', 'overlays');
+    svg.style.left = l + Torso[4] - RightArm[0] + 300 + "px";
+    svg.style.top = t  + Torso[5] - RightArm[1] + "px";
+
+    var rectangle = getNode('rect', { x: 10, y: 10, width: 100, height: 20, fill:'#ff00ff' });
+    svg.appendChild(rectangle);
+
 }
