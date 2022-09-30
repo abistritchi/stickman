@@ -68,6 +68,8 @@ function addStickman() {
 
 
 
+
+
     // Location inside the image
     offX = parseInt(Math.random() * w);
     offY = parseInt(Math.random() * h);
@@ -129,45 +131,39 @@ function addStickman() {
     rightFoot.style.top = t  + Torso[9] - RightFoot[1] + "px";
     document.body.appendChild(rightFoot);
 
-    /*
+
     var bier = document.createElement("img");
-    bier.setAttribute('src', 'bulb.svg');
+    bier.setAttribute('src', 'bier.png');
     bier.setAttribute('class', 'overlays');
     bier.style.left = l + Torso[4] - RightArm[0] + 200 + "px";
     bier.style.top = t  + Torso[5] - RightArm[1]- 300 + "px";
-    document.body.appendChild(bier);
-    */
+    //document.body.appendChild(bier);
 
 
-    /*
-    var svgElement = document.createElement("svg");
-    svgElement.setAttribute('id', 'svgElement');
-    svgElement.setAttribute('width', 100);
-    svgElement.setAttribute('high', 200);
-    svgElement.style.left = l + Torso[4] - RightArm[0] + 350+ "px";
-    svgElement.style.top = t  + Torso[5] - RightArm[1] + 0+ "px";
-    document.body.appendChild(svgElement);
-    */
-
-    /*
-    var bier = document.createElement("img");
-    bier.setAttribute('src', 'bulb.svg');
-    bier.setAttribute('class', 'overlays');
-    bier.setAttribute('width', 100);
-    bier.setAttribute('high', 200);
-    bier.appendChild( getNode('rect', { width:200, height:20, fill:'#ff0000' }) );
-    bier.style.left = l + Torso[4] - RightArm[0] + 200 + "px";
-    bier.style.top = t  + Torso[5] - RightArm[1]- 300 + "px";
-    document.body.appendChild(bier);
-    */
+    var bulb = document.createElement("img");
+    bulb.setAttribute('src', 'bulb.svg');
+    bulb.setAttribute('class', 'overlays');
+    bulb.setAttribute('width', 100);
+    bulb.setAttribute('high', 200);
+    bulb.appendChild( getNode('rect', { width:200, height:20, fill:'#ff0000' }) );
+    bulb.style.left = l + Torso[4] - RightArm[0] + 300 + "px";
+    bulb.style.top = t  + Torso[5] - RightArm[1] -50 + "px";
+    //document.body.appendChild(bulb);
 
     var svg = getNode("svg");
     document.body.appendChild(svg);
     svg.setAttribute('class', 'overlays');
-    svg.style.left = l + Torso[4] - RightArm[0] + 300 + "px";
-    svg.style.top = t  + Torso[5] - RightArm[1] + "px";
+    svg.style.left = l + Torso[4] - RightArm[0] + 330 + "px";
+    svg.style.top = t  + Torso[5] - RightArm[1] + -30+ "px";
 
     var rectangle = getNode('rect', { x: 10, y: 10, width: 100, height: 20, fill:'#ff00ff' });
-    svg.appendChild(rectangle);
+    //svg.appendChild(rectangle);
+
+
+
+
+    if (document.getElementById('pngImg').value === "bier"){document.body.appendChild(bier);};
+    if (document.getElementById('pngImg').value === "bulb"){document.body.appendChild(bulb);};
+    if (document.getElementById('pngImg').value === "svgImg"){svg.appendChild(rectangle);};
 
 }
